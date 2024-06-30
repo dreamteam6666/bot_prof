@@ -1,1 +1,3 @@
-import asyncio
+BOT_TOKEN = ''
+
+# подключение к базе данных
