@@ -1,9 +1,10 @@
+from logging import info
 from aiogram import types, F, Router
 from aiogram.types import Message
 from aiogram.filters import Command
 
-from kb import menu
-from text import hi_message
+from keyboards.kb import menu
+from text.text import hi_message
 
 router = Router()
 
@@ -16,10 +17,11 @@ async def start_handler(msg: Message):
 
 # команда меню
 @router.message(Command("menu"))
-async def start_handler(msg: Message):
-    await msg.answer("Меню", menu)
+async def menu_handler(msg: Message):
+    await msg.answer( menu)
 
 
-@router.message()
-async def message_handler(msg: Message):
+# команда информации
+@router.message(Command("info"))
+async def info_handler(msg: Message):
     await msg.answer(f"Твой ID: {msg.from_user.id}")

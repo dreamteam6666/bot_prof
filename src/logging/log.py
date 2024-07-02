@@ -1,6 +1,6 @@
 from main import *
-from kb import *
-from handlers import *
+from keyboards.kb import *
+from handlers.handlers import *
 
 # TODO сделать/доделать/настроить логирование
 logging.basicConfig(level=logging.DEBUG, filename="bot.log", filemode="")
